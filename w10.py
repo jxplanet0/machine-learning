@@ -110,13 +110,9 @@ print("Number of Clusters  |  Variance Between  |  Variance Within")
 for k in range(k_cluster):
     print(f"         {k+1:2d}        |  {variance_between[k]:15.2f} | {variance_within[k]:14.2f}")
 
-# Hitung rasio within-cluster variance dibagi between-cluster variance
 ratios = [variance_within[i] / variance_between[i] for i in range(k_cluster)]
-
-# Jumlah cluster
 cluster_numbers = list(range(1, k_cluster + 1))
 
-# Visualisasi rasio
 plt.figure(figsize=(10, 6))
 plt.plot(cluster_numbers, ratios, marker='o', linestyle='-')
 plt.title('Within-Cluster Variance to Between-Cluster Variance Ratio')
